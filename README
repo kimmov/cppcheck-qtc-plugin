@@ -1,0 +1,18 @@
+This is (will be!) a Cppcheck plugin for Qt Creator.
+
+It will run Cppcheck for the project (and/or files) open in Qt Creator.
+
+To build this plugin you'll need:
+- Qt creator 2.1 sources (and QtCreator compiled)
+- Qt 4.7.0 or later
+
+Set environment variables:
+- QTC_SOURCE: path to QT Creator sources
+- QTC_BUILD: path where Qt Creator is build
+
+Then just run qmake and make
+- qmake ; make
+
+The plugin is installed to QtCreator plugins directory (in Nokia-directory).
+Start the Qt Creator and plugin should be listed in Help / About Plugins.
+
