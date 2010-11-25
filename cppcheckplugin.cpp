@@ -4,6 +4,7 @@
 #include <QMenu>
 #include <QAction>
 #include <QKeySequence>
+#include <QMessageBox>
 #include <coreplugin/coreconstants.h>
 #include <coreplugin/actionmanager/actionmanager.h>
 #include <coreplugin/actionmanager/actioncontainer.h>
@@ -36,6 +37,8 @@ bool CppcheckPlugin::initialize(const QStringList &args, QString *errMsg)
     am->actionContainer(Core::Constants::M_TOOLS)->addMenu(submenu);
     submenu->addAction(cmd);
 
+    connect(cmd->action(), SIGNAL(triggered(bool)), this, SLOT(check()));
+
     return true;
 }
 
@@ -45,6 +48,12 @@ void CppcheckPlugin::extensionsInitialized()
 
 void CppcheckPlugin::shutdown()
 {
+}
+
+void CppcheckPlugin::check()
+{
+    QMessageBox::information(0, QString("Cppcheck Plugin"),
+            QString("Not implemented yet..."), QMessageBox::Ok);
 }
 
 Q_EXPORT_PLUGIN(CppcheckPlugin)
